@@ -1,8 +1,8 @@
 # IndianOS
 
-A browser-based desktop operating system inspired by India, built with HTML, CSS and JavaScript.
+A browser-based desktop operating system inspired by India, built with HTML, CSS, and JavaScript.
 
-![Desktop](https://github.com/MdZaidji/my-first-webos/blob/main/Screenshots/Devlog%20IndianOS%203.2.png)
+![Desktop](Screenshots/Devlog%20IndianOS%203.2.png)
 
 ## 🌐 Live Demo
 
@@ -54,25 +54,25 @@ No build tools, frameworks, or dependencies are required.
 
 I wanted to understand how desktop operating systems manage windows, so instead of watching tutorials on the topic, I tried building one.
 
-Each application (Files, Notes, Calculator, and About) is its own draggable window. When a window is opened, JavaScript updates its `z-index` so it always appears above the others. Dragging works by tracking the mouse position during `mousedown`, `mousemove`, and `mouseup` events.
+Each application (Files, Notes, Calculator, and About) is implemented as its own draggable window. When a window opens, JavaScript updates its `z-index` so it always appears above the others. Dragging is implemented by tracking the mouse/touch offset relative to the window so the window doesn't jump when you start dragging. Double-clicking the title bar toggles a maximized state that stores/restores size and position to mimic real OS behavior.
 
-One feature I'm particularly happy with is maximizing a window by double-clicking its title bar. It makes the desktop feel much closer to a real operating system while still being built entirely with vanilla JavaScript.
+The project uses plain DOM APIs — no frameworks — to keep the code simple and easy to learn.
 
 ---
 
-## 📸 More Screenshots
+## 📸 Screenshots
 
 ### Boot Screen
 
-![Boot](https://github.com/MdZaidji/my-first-webos/blob/main/Screenshots/Devlog%20IndianOS%203.1.png)
+![Boot](Screenshots/Devlog%20IndianOS%203.1.png)
 
 ### Multiple Windows
 
-![Windows](https://github.com/MdZaidji/my-first-webos/blob/main/Screenshots/Devlog%202%20IndianOS.png)
+![Windows](Screenshots/Devlog%202%20IndianOS.png)
 
 ### Calculator
 
-![Calculator](https://github.com/MdZaidji/my-first-webos/blob/main/Screenshots/Devlog%20IndianOS%203.3.png)
+![Calculator](Screenshots/Devlog%20IndianOS%203.3.png)
 
 ---
 
@@ -80,3 +80,7 @@ One feature I'm particularly happy with is maximizing a window by double-clickin
 
 - Created for the **Hack Club WebOS 1 Mission**
 - Thanks to Hack Club for designing the WebOS missions that inspired me to build this project.
+
+---
+
+If you have suggestions or ideas, feel free to open an issue or share feedback!
