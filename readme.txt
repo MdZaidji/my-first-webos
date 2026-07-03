@@ -1,51 +1,68 @@
-💡 Why IndianOS?
+IndianOS
 
-Most WebOS projects look similar, so I wanted mine to have its own identity.
+I built this for the Hack Club **WebOS 1** mission. The idea was simple: could I make a small desktop operating system that runs completely in a browser using only HTML, CSS and JavaScript?
+Turns out... yes. 😄
+Instead of trying to copy Windows or macOS exactly, I wanted to give it its own identity, so I went with an Indian-inspired desktop and called it **IndianOS**.
 
-Instead of copying an existing operating system, I gave it an Indian-inspired theme and focused on building the core experience of using a desktop inside a web browser.
+What can it do?
+- 🚀 Shows a boot screen before loading
+- 🖥️ Desktop with app iconsxs
+- 📋 Start Menu
+- 🪟 Multiple draggable windows
+- 📁 Files app
+- 📝 Notes app
+- 🧮 Calculator
+- 🕒 Live IST clock
+- 🔔 Notification toasts
+- 🪟 Double-click a title bar to maximize or restore a window
+- ℹ️ About window
 
-🛠️ What I built
+Screenshots
 
-The desktop currently includes:
+Desktop
 
-🚀 Boot Screen
-🖥️ Desktop Interface
-📋 Start Menu
-🪟 Multiple Draggable Windows
-📁 Files
-📝 Notes
-🧮 Calculator
-🕒 Live IST Clock
-🔔 Notification Toasts
-🪟 Double-click to Maximize Windows
-ℹ️ About IndianOS
+![Desktop](Screenshots/Devlog IndianOS 3.2.png)
 
-Everything runs completely in the browser using only HTML, CSS, and JavaScript.
+Boot Screen
 
-🧠 The hardest part
+![Boot Screen](Screenshots/Devlog IndianOS 3.1.png)
 
-Getting the draggable windows to feel natural took the most time.
+Multiple Windows
 
-At first, windows would jump around while dragging and sometimes overlap incorrectly. I had to learn how mouse events work (mousedown, mousemove, and mouseup) and use z-index so the active window always stays on top.
+![Windows](Screenshots/Devlog 2 IndianOS.png)    
 
-That was probably the biggest thing I learned while making this project.
+Calculator
 
-🎮 Try it!
+![Calculator](Screenshots/Devlog IndianOS 3.3.png)
 
-When you open the project:
 
-* Wait for the boot screen.
-* Open apps from the desktop or Start Menu.
-* Drag multiple windows around.
-* Double-click a title bar to maximize a window.
-* Open the About window to see project information.
+The hardest part
+The calculator was actually one of the easiest parts.
+Getting the windows to behave like real desktop windows was much harder.
+At first the windows jumped around when I dragged them because I wasn't calculating the mouse offset correctly. After fixing that, I had another issue where new windows appeared behind older ones. Learning how `z-index` works solved that problem.
 
-📂 Project Structure
+Once dragging finally worked smoothly, the project started feeling like an actual desktop instead of just a webpage.
 
-IndianOS/
-├── index.html
-├── style.css
-├── script.js
-└── assets/
 
-I intentionally kept everything simple so I could understand every line of code.
+My favourite feature
+
+The boot screen.
+It's a small detail, but it makes the project feel like an operating system from the moment you open it instead of immediately showing the desktop.
+I also enjoyed adding the maximize feature by double-clicking the title bar because it makes the windows feel much more natural to use.
+
+How to try it
+
+Open the website.
+Wait a couple of seconds for the boot screen to finish.
+
+Then try:
+- opening multiple apps
+- dragging windows around
+- double-clicking a title bar
+- checking the live clock
+- opening the About window
+
+Everything works directly in the browser.
+
+
+Thanks for checking out IndianOS! 🇮🇳
