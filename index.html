@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<body style="background-color:#c9ffcf">
-    <h1 style='color:green'>Welcome to my OS</h1>
-    <h2>Introduction</h2>
-    <p style='color: red'>Hello world!</p>
-    <a href=" https://www.instagram.com/starthackclub/">label</a><br>
-    <s>Strike Through</s>
-    <p>break the <br> line like this</p>
-    <p>use strong to <strong>bold text</strong></p>
-    <p> <dfn>DFN Tag</dfn> is a tag that marks something being defined</p>
-    <p><abbr title="abbreviation">abbr</abbr> is a tag that marks an abbreviated term</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>IndianOS</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="desktop">
+        <div class="icon" onclick="openWindow('files')">
+            📁
+            <span>Files</span>
+        </div>
+        <div class="icon" onclick="openWindow('notes')">
+            📝
+            <span>Notes</span>
+        </div>
+        <div class="icon" onclick="openWindow('calculator')">
+            🧮
+            <span>Calculator</span>
+        </div>
+    </div>
+    <div id="taskbar">
+        <button id="startBtn">IN Start</button>
+        <div id="clock"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
