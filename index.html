@@ -1,28 +1,144 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndianOS</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Desktop -->
     <div id="desktop">
-        <div class="icon" onclick="openWindow('files')">
+
+        <div class="icon" onclick="openWindow('Files')">
             📁
             <span>Files</span>
         </div>
-        <div class="icon" onclick="openWindow('notes')">
+
+        <div class="icon" onclick="openWindow('Notes')">
             📝
             <span>Notes</span>
         </div>
-        <div class="icon" onclick="openWindow('calculator')">
+
+        <div class="icon" onclick="openWindow('Calculator')">
             🧮
             <span>Calculator</span>
         </div>
+
     </div>
+
+    <!-- Taskbar -->
     <div id="taskbar">
-        <button id="startBtn">IN Start</button>
+
+        <button id="startBtn">Start</button>
+
         <div id="clock"></div>
+
     </div>
+
+    <!-- Start Menu -->
+    <div id="startMenu">
+
+        <div onclick="openWindow('Files')">📁 Files</div>
+
+        <div onclick="openWindow('Notes')">📝 Notes</div>
+
+        <div onclick="openWindow('Calculator')">🧮 Calculator</div>
+
+    </div>
+
+    <!-- Files Window -->
+    <div class="window" id="filesWindow">
+
+        <div class="titlebar">
+
+            <span>📁 Files</span>
+
+            <button onclick="closeWindow('filesWindow')">❌</button>
+
+        </div>
+
+        <div class="content">
+
+            <h3>Files</h3>
+
+            <p>Welcome to IndianOS Files.</p>
+
+        </div>
+
+    </div>
+
+    <!-- Notes Window -->
+    <div class="window" id="notesWindow">
+
+        <div class="titlebar">
+
+            <span>📝 Notes</span>
+
+            <button onclick="closeWindow('notesWindow')">❌</button>
+
+        </div>
+
+        <div class="content">
+
+            <textarea placeholder="Write something..."></textarea>
+
+        </div>
+
+    </div>
+
+    <!-- Calculator Window -->
+    <div class="window" id="calculatorWindow">
+
+        <div class="titlebar">
+
+            <span>🧮 Calculator</span>
+
+            <button onclick="closeWindow('calculatorWindow')">❌</button>
+
+        </div>
+
+        <div class="content">
+
+            <input
+                type="text"
+                id="calcDisplay"
+                readonly
+            >
+
+            <div class="calc-buttons">
+
+                <button onclick="appendCalc('7')">7</button>
+                <button onclick="appendCalc('8')">8</button>
+                <button onclick="appendCalc('9')">9</button>
+                <button onclick="appendCalc('/')">÷</button>
+
+                <button onclick="appendCalc('4')">4</button>
+                <button onclick="appendCalc('5')">5</button>
+                <button onclick="appendCalc('6')">6</button>
+                <button onclick="appendCalc('*')">×</button>
+
+                <button onclick="appendCalc('1')">1</button>
+                <button onclick="appendCalc('2')">2</button>
+                <button onclick="appendCalc('3')">3</button>
+                <button onclick="appendCalc('-')">−</button>
+
+                <button onclick="clearCalc()">C</button>
+                <button onclick="appendCalc('0')">0</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendCalc('+')">+</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="script.js"></script>
+
 </body>
+
+</html>
