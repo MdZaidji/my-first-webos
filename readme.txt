@@ -34,12 +34,14 @@ That was probably the biggest thing I learned while making this project.
 
 When you open the project:
 
-Wait for the boot screen.
-Open apps from the desktop or Start Menu.
-Drag multiple windows around.
-Double-click a title bar to maximize a window.
-Open the About window to see project information.
+* Wait for the boot screen.
+* Open apps from the desktop or Start Menu.
+* Drag multiple windows around.
+* Double-click a title bar to maximize a window.
+* Open the About window to see project information.
+
 📂 Project Structure
+
 IndianOS/
 ├── index.html
 ├── style.css
