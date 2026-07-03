@@ -1,4 +1,16 @@
-// ================= CLOCK =================
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.getElementById("bootScreen").style.display = "none";
+
+        document.getElementById("desktop").style.display = "flex";
+
+        document.getElementById("taskbar").style.display = "flex";
+
+    }, 3000);
+
+});
 
 function updateClock() {
     const now = new Date();
@@ -12,8 +24,6 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-
-// ================= START MENU =================
 
 const startBtn = document.getElementById("startBtn");
 const startMenu = document.getElementById("startMenu");
@@ -33,34 +43,35 @@ document.addEventListener("click", () => {
 });
 
 
-// ================= WINDOWS =================
 
 const windows = {
     Files: "filesWindow",
     Notes: "notesWindow",
-    Calculator: "calculatorWindow"
+    Calculator: "calculatorWindow",
+    About: "aboutWindow"
 };
 
 let highestZ = 100;
 
-function openWindow(app) {
+function openWindow(app){
 
-    const win = document.getElementById(windows[app]);
+    const win=document.getElementById(windows[app]);
 
-    if (!win) return;
+    if(!win) return;
 
-    win.style.display = "block";
+    win.style.display="block";
 
     highestZ++;
-    win.style.zIndex = highestZ;
+
+    win.style.zIndex=highestZ;
+
+    showToast(app+" opened");
 }
 
 function closeWindow(id) {
     document.getElementById(id).style.display = "none";
 }
 
-
-// ================= DRAG WINDOWS =================
 
 document.querySelectorAll(".window").forEach(win => {
 
@@ -69,6 +80,26 @@ document.querySelectorAll(".window").forEach(win => {
     let dragging = false;
     let offsetX = 0;
     let offsetY = 0;
+    bar.addEventListener("dblclick",()=>{
+
+    if(win.classList.contains("max")){
+
+        win.classList.remove("max");
+
+        win.style.width="350px";
+        win.style.height="280px";
+
+        return;
+    }
+
+    win.classList.add("max");
+
+    win.style.left="0";
+    win.style.top="0";
+    win.style.width="100vw";
+    win.style.height="calc(100vh - 50px)";
+
+});
 
     bar.addEventListener("mousedown", (e) => {
 
@@ -96,8 +127,6 @@ document.querySelectorAll(".window").forEach(win => {
 });
 
 
-// ================= CALCULATOR =================
-
 const calcDisplay = document.getElementById("calcDisplay");
 
 function appendCalc(value) {
@@ -117,5 +146,73 @@ function calculate() {
     } catch {
         calcDisplay.value = "Error";
     }
+
+}
+function showToast(message){
+
+    const toast=document.getElementById("toast");
+
+    toast.innerHTML=message;
+
+    toast.style.display="block";
+
+    setTimeout(()=>{
+
+        toast.style.display="none";
+
+    },2500);
+
+}
+document.addEventListener("keydown",(e)=>{
+
+    if(e.ctrlKey && e.altKey){
+
+        switch(e.key.toLowerCase()){
+
+            case "f":
+                openWindow("Files");
+                break;
+
+            case "n":
+                openWindow("Notes");
+                break;
+
+            case "c":
+                openWindow("Calculator");
+                break;
+
+            case "a":
+                openWindow("About");
+                break;
+        }
+
+    }
+
+});
+const contextMenu=document.getElementById("contextMenu");
+document.getElementById("desktop").addEventListener("contextmenu",(e)=>{
+    e.preventDefault();
+
+    contextMenu.style.display="block";
+
+    contextMenu.style.left=e.pageX+"px";
+
+    contextMenu.style.top=e.pageY+"px";
+
+});
+
+document.addEventListener("click",()=>{
+
+    contextMenu.style.display="none";
+
+});
+
+function closeAllWindows(){
+
+    document.querySelectorAll(".window").forEach(win=>{
+
+        win.style.display="none";
+
+    });
 
 }

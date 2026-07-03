@@ -9,9 +9,32 @@
 </head>
 
 <body>
+    
+    <div id="bootScreen">
 
-    <!-- Desktop -->
-    <div id="desktop">
+        <div id="bootContent">
+
+            <h1>IndianOS</h1>
+
+            <p>Version 1.0</p>
+
+            <div class="loader">
+            <div class="progress"></div>
+            </div>
+
+                <p id="loadingText">Loading IndianOS...</p>
+
+        </div>
+
+    </div>
+    
+
+    
+    <div id="desktop" style="display:none;">
+        <div class="icon" onclick="openWindow('About')">
+        ℹ️
+        <span>About</span>
+    </div>
 
         <div class="icon" onclick="openWindow('Files')">
             📁
@@ -29,9 +52,10 @@
         </div>
 
     </div>
+    
 
-    <!-- Taskbar -->
-    <div id="taskbar">
+    
+    <div id="taskbar" style="display:none;">
 
         <button id="startBtn">Start</button>
 
@@ -39,8 +63,9 @@
 
     </div>
 
-    <!-- Start Menu -->
+    
     <div id="startMenu">
+        <div onclick="openWindow('About')">ℹ️ About</div>
 
         <div onclick="openWindow('Files')">📁 Files</div>
 
@@ -49,8 +74,46 @@
         <div onclick="openWindow('Calculator')">🧮 Calculator</div>
 
     </div>
+    
+<div class="window" id="aboutWindow">
 
-    <!-- Files Window -->
+    <div class="titlebar">
+        <span>ℹ️ About IndianOS</span>
+        <button onclick="closeWindow('aboutWindow')">❌</button>
+    </div>
+
+    <div class="content">
+
+        <h2>🇮🇳 IndianOS</h2>
+
+        <p><b>Version:</b> 1.0</p>
+
+        <p><b>Developer:</b> SK</p>
+
+        <hr>
+
+        <p>
+            A browser-based desktop operating system inspired by India,
+            created for the Hack Club WebOS Mission.
+        </p>
+
+        <br>
+
+        <p><b>Features</b></p>
+
+        <ul>
+            <li>📁 Files</li>
+            <li>📝 Notes</li>
+            <li>🧮 Calculator</li>
+            <li>🪟 Draggable Windows</li>
+            <li>🕒 Live IST Clock</li>
+        </ul>
+
+    </div>
+
+</div>
+
+    
     <div class="window" id="filesWindow">
 
         <div class="titlebar">
@@ -71,7 +134,7 @@
 
     </div>
 
-    <!-- Notes Window -->
+    
     <div class="window" id="notesWindow">
 
         <div class="titlebar">
@@ -90,7 +153,7 @@
 
     </div>
 
-    <!-- Calculator Window -->
+    
     <div class="window" id="calculatorWindow">
 
         <div class="titlebar">
@@ -111,25 +174,25 @@
 
             <div class="calc-buttons">
 
-                <button onclick="appendCalc('7')">7</button>
-                <button onclick="appendCalc('8')">8</button>
-                <button onclick="appendCalc('9')">9</button>
-                <button onclick="appendCalc('/')">÷</button>
+                <button onclick="appendCalc('7')">7️⃣</button>
+                <button onclick="appendCalc('8')">8️⃣</button>
+                <button onclick="appendCalc('9')">9️⃣</button>
+                <button onclick="appendCalc('/')">➗</button>
 
-                <button onclick="appendCalc('4')">4</button>
-                <button onclick="appendCalc('5')">5</button>
-                <button onclick="appendCalc('6')">6</button>
-                <button onclick="appendCalc('*')">×</button>
+                <button onclick="appendCalc('4')">4️⃣</button>
+                <button onclick="appendCalc('5')">5️⃣</button>
+                <button onclick="appendCalc('6')">6️⃣</button>
+                <button onclick="appendCalc('*')">✖️</button>
 
-                <button onclick="appendCalc('1')">1</button>
-                <button onclick="appendCalc('2')">2</button>
-                <button onclick="appendCalc('3')">3</button>
-                <button onclick="appendCalc('-')">−</button>
+                <button onclick="appendCalc('1')">1️⃣</button>
+                <button onclick="appendCalc('2')">2️⃣</button>
+                <button onclick="appendCalc('3')">3️⃣</button>
+                <button onclick="appendCalc('-')">➖</button>
 
-                <button onclick="clearCalc()">C</button>
-                <button onclick="appendCalc('0')">0</button>
-                <button onclick="calculate()">=</button>
-                <button onclick="appendCalc('+')">+</button>
+                <button onclick="clearCalc()">🆑</button>
+                <button onclick="appendCalc('0')">0️⃣</button>
+                <button onclick="calculate()">🟰</button>
+                <button onclick="appendCalc('+')">➕</button>
 
             </div>
 
@@ -138,6 +201,17 @@
     </div>
 
     <script src="script.js"></script>
+    <div id="toast"></div>
+    
+    <div id="contextMenu">
+
+        <div onclick="location.reload()">🔄 Refresh</div>
+
+        <div onclick="openWindow('About')">ℹ About IndianOS</div>
+
+        <div onclick="closeAllWindows()">❌ Close All Windows</div>
+        
+    </div>
 
 </body>
 
