@@ -12,7 +12,7 @@ body{
 #desktop{
     width:100vw;
     height:100vh;
-    background:url("/assets/wallpapers/indian-flag.png") center/cover no-repeat;
+    background: url("./assets/wallpapers/indian-flag.png") center/cover no-repeat;
     display:flex;
     flex-direction:column;
     gap:25px;
